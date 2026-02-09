@@ -1,32 +1,46 @@
 {
-  "name": "portfolio-monorepo",
-  "version": "1.0.0",
-  "description": "Full-stack portfolio website with Next.js and NestJS",
+  "name": "frontend",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
-    "dev": "concurrently \"pnpm --filter frontend dev\" \"pnpm --filter backend dev\"",
-    "build": "pnpm --filter frontend build && pnpm --filter backend build",
-    "start": "concurrently \"pnpm --filter frontend start\" \"pnpm --filter backend start\"",
-    "test": "pnpm --filter \"*\" test",
-    "lint": "pnpm --filter \"*\" lint",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "db:generate": "pnpm --filter backend db:generate",
-    "db:migrate": "pnpm --filter backend db:migrate",
-    "db:studio": "pnpm --filter backend db:studio"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^10.16.16",
+    "next-auth": "^4.24.5",
+    "@next-auth/prisma-adapter": "^1.0.7",
+    "@prisma/client": "^5.7.1",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.2.0",
+    "lucide-react": "^0.303.0",
+    "react-hook-form": "^7.48.2",
+    "@hookform/resolvers": "^3.3.2",
+    "zod": "^3.22.4",
+    "react-hot-toast": "^2.4.1",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@types/node": "^20.10.0",
-    "concurrently": "^8.2.2",
-    "prettier": "^3.1.0",
-    "typescript": "^5.3.0"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "pnpm": ">=8.0.0"
-  },
-  "packageManager": "pnpm@8.15.0"
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9"
+  }
 }
