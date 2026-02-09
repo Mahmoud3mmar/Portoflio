@@ -109,7 +109,7 @@ const Skills = () => {
           <SkillCategory title="Cloud & DevOps" skills={skills.cloud} icon={Cloud} />
           <SkillCategory title="Tools" skills={skills.tools} icon={Wrench} />
         </div>
-      </div>
+      </div> 
     </section>
   )
 }
