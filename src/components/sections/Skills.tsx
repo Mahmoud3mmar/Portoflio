@@ -51,7 +51,9 @@ const Skills = () => {
     ]
   }
 
-  const SkillCategory = ({ title, skills, icon: Icon }: { title: string; skills: typeof skills.backend; icon: any }) => (
+  type SkillItem = { name: string; icon: any }
+
+  const SkillCategory = ({ title, skills, icon: Icon }: { title: string; skills: SkillItem[]; icon: any }) => (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
