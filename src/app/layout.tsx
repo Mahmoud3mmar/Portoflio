@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   description: 'Backend Engineer crafting scalable systems using Domain-Driven Design, Clean Architecture, and modern technologies',
   keywords: ['portfolio', 'backend engineer', 'software engineer', 'Node.js', 'NestJS', 'TypeScript', 'PostgreSQL'],
   authors: [{ name: 'Mahmoud Ammar' }],
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
   openGraph: {
     title: 'Mahmoud Ammar | Backend Software Engineer',
     description: 'Backend Engineer crafting scalable systems using Domain-Driven Design, Clean Architecture, and modern technologies',

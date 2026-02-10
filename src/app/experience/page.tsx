@@ -92,7 +92,7 @@ export default function Experience() {
   }, [])
 
   return (
-    <div className="bg-[#222222] text-[#d5d5d5] font-display min-h-screen">
+    <div className="bg-[#222222] text-[#d5d5d5] font-display min-h-screen w-full overflow-x-hidden">
       {/* Lightbox Modal */}
       {lightboxImage && (
         <div 
@@ -119,7 +119,7 @@ export default function Experience() {
         </div>
       )}
 
-      <main>
+      <main className="w-full">
         <div className="flex-1 py-8 sm:py-12 px-4 sm:px-6 lg:px-40" id="experience-fragment">
           <div className="max-w-4xl mx-auto">
             {/* Breadcrumb */}
@@ -176,10 +176,10 @@ export default function Experience() {
                         {/* Carousel Container */}
                         <div 
                           id="carousel-cairo-runners"
-                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth -mx-4 sm:mx-0 px-4 sm:px-0"
+                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/cairo-runners/cairo-runners.png')}
@@ -287,10 +287,10 @@ export default function Experience() {
                         {/* Carousel Container */}
                         <div 
                           id="carousel-spark-booking"
-                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth -mx-4 sm:mx-0 px-4 sm:px-0"
+                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/spark-booking/1758010933041.jpg')}
@@ -303,7 +303,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/spark-booking/1765373388481.jpg')}
@@ -574,10 +574,10 @@ export default function Experience() {
                         {/* Carousel Container */}
                         <div 
                           id="carousel-plan-b"
-                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth -mx-4 sm:mx-0 px-4 sm:px-0"
+                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225519.png')}
@@ -590,7 +590,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225542.png')}
@@ -603,7 +603,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225634.png')}
@@ -616,7 +616,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225803.png')}
@@ -736,10 +736,10 @@ export default function Experience() {
                         {/* Carousel Container */}
                         <div 
                           id="carousel-slash"
-                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth -mx-4 sm:mx-0 px-4 sm:px-0"
+                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed.webp')}
@@ -752,7 +752,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed2.webp')}
@@ -765,7 +765,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed3.webp')}
@@ -778,7 +778,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[85vw] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed4.webp')}
@@ -928,6 +928,8 @@ export default function Experience() {
     </div>
   )
 }
+
+
 
 
 
