@@ -176,10 +176,10 @@ export default function Experience() {
                         {/* Carousel Container */}
                         <div 
                           id="carousel-cairo-runners"
-                          className="flex overflow-x-auto gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
+                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth -mx-4 sm:mx-0 px-4 sm:px-0"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/cairo-runners/cairo-runners.png')}
@@ -267,7 +267,7 @@ export default function Experience() {
                         {/* Navigation Arrows */}
                         <button
                           onClick={() => prevImage('spark-booking', 2)}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300"
+                          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-1.5 sm:p-2 rounded-full shadow-lg opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300"
                           aria-label="Previous image"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -276,7 +276,7 @@ export default function Experience() {
                         </button>
                         <button
                           onClick={() => nextImage('spark-booking', 2)}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300"
+                          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-1.5 sm:p-2 rounded-full shadow-lg opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300"
                           aria-label="Next image"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -287,10 +287,10 @@ export default function Experience() {
                         {/* Carousel Container */}
                         <div 
                           id="carousel-spark-booking"
-                          className="flex overflow-x-auto gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
+                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth -mx-4 sm:mx-0 px-4 sm:px-0"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/spark-booking/1758010933041.jpg')}
@@ -303,7 +303,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/spark-booking/1765373388481.jpg')}
@@ -319,7 +319,7 @@ export default function Experience() {
                         </div>
 
                         {/* Indicators */}
-                        <div className="flex justify-center gap-2 mt-3">
+                        <div className="flex justify-center gap-1.5 sm:gap-2 mt-3">
                           {[0, 1].map((index) => (
                             <button
                               key={index}
@@ -554,7 +554,7 @@ export default function Experience() {
                         {/* Navigation Arrows */}
                         <button
                           onClick={() => prevImage('plan-b', 4)}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300"
+                          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-1.5 sm:p-2 rounded-full shadow-lg opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300"
                           aria-label="Previous image"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -563,7 +563,7 @@ export default function Experience() {
                         </button>
                         <button
                           onClick={() => nextImage('plan-b', 4)}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300"
+                          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-1.5 sm:p-2 rounded-full shadow-lg opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300"
                           aria-label="Next image"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -574,10 +574,10 @@ export default function Experience() {
                         {/* Carousel Container */}
                         <div 
                           id="carousel-plan-b"
-                          className="flex overflow-x-auto gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
+                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth -mx-4 sm:mx-0 px-4 sm:px-0"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225519.png')}
@@ -590,7 +590,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225542.png')}
@@ -603,7 +603,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225634.png')}
@@ -616,7 +616,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225803.png')}
@@ -632,7 +632,7 @@ export default function Experience() {
                         </div>
 
                         {/* Indicators */}
-                        <div className="flex justify-center gap-2 mt-3">
+                        <div className="flex justify-center gap-1.5 sm:gap-2 mt-3">
                           {[0, 1, 2, 3].map((index) => (
                             <button
                               key={index}
@@ -716,7 +716,7 @@ export default function Experience() {
                         {/* Navigation Arrows */}
                         <button
                           onClick={() => prevImage('slash', 4)}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300"
+                          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-1.5 sm:p-2 rounded-full shadow-lg opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300"
                           aria-label="Previous image"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -725,7 +725,7 @@ export default function Experience() {
                         </button>
                         <button
                           onClick={() => nextImage('slash', 4)}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300"
+                          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-10 bg-[#007ced] hover:bg-[#0066cc] text-white p-1.5 sm:p-2 rounded-full shadow-lg opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300"
                           aria-label="Next image"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -736,10 +736,10 @@ export default function Experience() {
                         {/* Carousel Container */}
                         <div 
                           id="carousel-slash"
-                          className="flex overflow-x-auto gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
+                          className="flex overflow-x-auto gap-3 sm:gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth -mx-4 sm:mx-0 px-4 sm:px-0"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed.webp')}
@@ -752,7 +752,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed2.webp')}
@@ -765,7 +765,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed3.webp')}
@@ -778,7 +778,7 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
+                          <div className="flex-none w-[calc(100vw-2rem)] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed4.webp')}
@@ -794,7 +794,7 @@ export default function Experience() {
                         </div>
 
                         {/* Indicators */}
-                        <div className="flex justify-center gap-2 mt-3">
+                        <div className="flex justify-center gap-1.5 sm:gap-2 mt-3">
                           {[0, 1, 2, 3].map((index) => (
                             <button
                               key={index}
@@ -928,6 +928,10 @@ export default function Experience() {
     </div>
   )
 }
+
+
+
+
 
 
 
