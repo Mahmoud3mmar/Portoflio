@@ -323,7 +323,7 @@ export default function Experience() {
                           {[0, 1].map((index) => (
                             <button
                               key={index}
-                              onClick={() => scrollToImage('spark-booking', index, 2)}
+                              onClick={() => scrollToImage('spark-booking', index)}
                               className={`h-1.5 rounded-full transition-all duration-300 ${
                                 activeCarousel['spark-booking'] === index 
                                   ? 'w-6 bg-[#007ced]' 
@@ -636,7 +636,7 @@ export default function Experience() {
                           {[0, 1, 2, 3].map((index) => (
                             <button
                               key={index}
-                              onClick={() => scrollToImage('plan-b', index, 4)}
+                              onClick={() => scrollToImage('plan-b', index)}
                               className={`h-1.5 rounded-full transition-all duration-300 ${
                                 activeCarousel['plan-b'] === index 
                                   ? 'w-6 bg-[#007ced]' 
@@ -798,7 +798,7 @@ export default function Experience() {
                           {[0, 1, 2, 3].map((index) => (
                             <button
                               key={index}
-                              onClick={() => scrollToImage('slash', index, 4)}
+                              onClick={() => scrollToImage('slash', index)}
                               className={`h-1.5 rounded-full transition-all duration-300 ${
                                 activeCarousel['slash'] === index 
                                   ? 'w-6 bg-[#007ced]' 
@@ -928,5 +928,6 @@ export default function Experience() {
     </div>
   )
 }
+
 
 
