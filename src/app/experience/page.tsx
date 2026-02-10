@@ -131,16 +131,16 @@ export default function Experience() {
 
             {/* Title */}
             <div className="mb-8 sm:mb-12 border-b border-[#444444] pb-6 sm:pb-8" data-animation-on-scroll="">
-              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3 sm:mb-4 text-[#f5f5f5]">Featured Projects</h1>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-3 sm:mb-4 text-[#f5f5f5]">Featured Projects</h1>
               <p className="text-[#aaaaaa] text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed">
                 A showcase of technical projects demonstrating backend architecture, system design, and engineering excellence.
               </p>
             </div>
 
             {/* Experience Timeline */}
-            <section className="space-y-12 sm:space-y-16">
+            <section className="space-y-8 sm:space-y-12 md:space-y-16">
               {/* Cairo Runners Project */}
-              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="flex flex-col sm:grid sm:grid-cols-[40px_1fr] gap-4 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>directions_run</span>
@@ -149,13 +149,13 @@ export default function Experience() {
                 </div>
                 <div className="pb-4">
                   <div className="flex flex-wrap justify-between items-start mb-1">
-                    <h3 className="text-xl font-bold text-[#f5f5f5]">Cairo Runners - Race Management Platform</h3>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#f5f5f5]">Cairo Runners - Race Management Platform</h3>
                     <span className="text-[#007ced] text-xs font-bold uppercase tracking-wider px-2 py-1 bg-[#007ced]/10 rounded">[Production]</span>
                   </div>
                   <p className="text-[#007ced] font-semibold mb-4 text-sm uppercase tracking-wider">Race & Event Management System</p>
                   <div className="text-[#d5d5d5] space-y-4 mb-6 leading-relaxed max-w-3xl">
                     <p>A comprehensive race and event management system designed for organizing running events, marathons, and athletic competitions.</p>
-                    <ul className="list-none space-y-2 text-sm">
+                    <ul className="list-none space-y-2 text-xs sm:text-sm">
                       <li className="flex gap-3">
                         <span className="text-[#007ced] mt-1.5 h-1.5 w-1.5 rounded-full bg-[#007ced] shrink-0"></span>
                         <span><strong>Race Management:</strong> Complete race lifecycle management including event creation, scheduling, location tracking with GPS coordinates, and bus stop coordination for participant transportation.</span>
@@ -227,7 +227,7 @@ export default function Experience() {
               </div>
 
               {/* Spark Booking System Project */}
-              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="flex flex-col sm:grid sm:grid-cols-[40px_1fr] gap-4 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>event_available</span>
@@ -236,13 +236,13 @@ export default function Experience() {
                 </div>
                 <div className="pb-4">
                   <div className="flex flex-wrap justify-between items-start mb-1">
-                    <h3 className="text-xl font-bold text-[#f5f5f5]">Spark Booking System - Multi-Service Entertaining Platform</h3>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#f5f5f5]">Spark Booking System - Multi-Service Entertaining Platform</h3>
                     <span className="text-[#007ced] text-xs font-bold uppercase tracking-wider px-2 py-1 bg-[#007ced]/10 rounded">[Production]</span>
                   </div>
                   <p className="text-[#007ced] font-semibold mb-4 text-sm uppercase tracking-wider">Multi-Tenant Booking Platform</p>
                   <div className="text-[#d5d5d5] space-y-4 mb-6 leading-relaxed max-w-3xl">
                     <p>A sophisticated multi-tenancy platform supports managing your spaces and ease the reserving flow.</p>
-                    <ul className="list-none space-y-2 text-sm">
+                    <ul className="list-none space-y-2 text-xs sm:text-sm">
                       <li className="flex gap-3">
                         <span className="text-[#007ced] mt-1.5 h-1.5 w-1.5 rounded-full bg-[#007ced] shrink-0"></span>
                         <span><strong>API Versioning:</strong> Implemented backward-compatible API versioning system allowing seamless feature updates while maintaining client compatibility.</span>
@@ -373,7 +373,7 @@ export default function Experience() {
               </div>
 
               {/* Anubis Martial Arts Platform Project */}
-              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="flex flex-col sm:grid sm:grid-cols-[40px_1fr] gap-4 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>sports_martial_arts</span>
@@ -382,13 +382,13 @@ export default function Experience() {
                 </div>
                 <div className="pb-4">
                   <div className="flex flex-wrap justify-between items-start mb-1">
-                    <h3 className="text-xl font-bold text-[#f5f5f5]">Anubis - Martial Arts Academy Management Platform</h3>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#f5f5f5]">Anubis - Martial Arts Academy Management Platform</h3>
                     <span className="text-[#007ced] text-xs font-bold uppercase tracking-wider px-2 py-1 bg-[#007ced]/10 rounded">[Production]</span>
                   </div>
                   <p className="text-[#007ced] font-semibold mb-4 text-sm uppercase tracking-wider">Subscription & Academy Management System</p>
                   <div className="text-[#d5d5d5] space-y-4 mb-6 leading-relaxed max-w-3xl">
                     <p>A comprehensive subscription and package management system designed for organizing fitness packages, coaching services, and subscription-based business operations.</p>
-                    <ul className="list-none space-y-2 text-sm">
+                    <ul className="list-none space-y-2 text-xs sm:text-sm">
                       <li className="flex gap-3">
                         <span className="text-[#007ced] mt-1.5 h-1.5 w-1.5 rounded-full bg-[#007ced] shrink-0"></span>
                         <span><strong>Membership & Subscription System:</strong> Advanced student membership management with flexible subscription plans, payment processing through Paymob integration, membership renewals, class package purchases.</span>
@@ -440,7 +440,7 @@ export default function Experience() {
               </div>
 
               {/* DFN Nutrition Platform Project */}
-              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="flex flex-col sm:grid sm:grid-cols-[40px_1fr] gap-4 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>restaurant</span>
@@ -449,13 +449,13 @@ export default function Experience() {
                 </div>
                 <div className="pb-4">
                   <div className="flex flex-wrap justify-between items-start mb-1">
-                    <h3 className="text-xl font-bold text-[#f5f5f5]">DFN - Nutrition & Meal Planning Platform</h3>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#f5f5f5]">DFN - Nutrition & Meal Planning Platform</h3>
                     <span className="text-[#007ced] text-xs font-bold uppercase tracking-wider px-2 py-1 bg-[#007ced]/10 rounded">[Production]</span>
                   </div>
                   <p className="text-[#007ced] font-semibold mb-4 text-sm uppercase tracking-wider">AI-Powered Nutrition System</p>
                   <div className="text-[#d5d5d5] space-y-4 mb-6 leading-relaxed max-w-3xl">
                     <p>An intelligent nutrition and meal planning system that generates personalized dietary plans using advanced algorithms and nutritional science for one of the finest coaches in the middle east.</p>
-                    <ul className="list-none space-y-2 text-sm">
+                    <ul className="list-none space-y-2 text-xs sm:text-sm">
                       <li className="flex gap-3">
                         <span className="text-[#007ced] mt-1.5 h-1.5 w-1.5 rounded-full bg-[#007ced] shrink-0"></span>
                         <span><strong>AI-Powered Meal Engine:</strong> Sophisticated meal generation algorithms using constraint-based optimization to create nutritionally balanced meal plans based on user goals (normal, shredding, etc.).</span>
@@ -514,7 +514,7 @@ export default function Experience() {
               </div>
 
               {/* Plan-B Medical Course Platform Project */}
-              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="flex flex-col sm:grid sm:grid-cols-[40px_1fr] gap-4 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>school</span>
@@ -523,13 +523,13 @@ export default function Experience() {
                 </div>
                 <div className="pb-4">
                   <div className="flex flex-wrap justify-between items-start mb-1">
-                    <h3 className="text-xl font-bold text-[#f5f5f5]">Plan-B - Medical Online Course Platform</h3>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#f5f5f5]">Plan-B - Medical Online Course Platform</h3>
                     <span className="text-[#007ced] text-xs font-bold uppercase tracking-wider px-2 py-1 bg-[#007ced]/10 rounded">[Production]</span>
                   </div>
                   <p className="text-[#007ced] font-semibold mb-4 text-sm uppercase tracking-wider">Medical Education Platform</p>
                   <div className="text-[#d5d5d5] space-y-4 mb-6 leading-relaxed max-w-3xl">
                     <p>An online platform delivering medical education through a diverse catalog of courses and specialized training programs in collaboration with local hospitals.</p>
-                    <ul className="list-none space-y-2 text-sm">
+                    <ul className="list-none space-y-2 text-xs sm:text-sm">
                       <li className="flex gap-3">
                         <span className="text-[#007ced] mt-1.5 h-1.5 w-1.5 rounded-full bg-[#007ced] shrink-0"></span>
                         <span><strong>Authentication and Role-Based Access:</strong> Implemented secure authentication mechanisms and role-based access control to protect sensitive data.</span>
@@ -681,7 +681,7 @@ export default function Experience() {
               </div>
 
               {/* Slash E-Commerce Platform Project */}
-              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="flex flex-col sm:grid sm:grid-cols-[40px_1fr] gap-4 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>shopping_cart</span>
@@ -690,12 +690,12 @@ export default function Experience() {
                 </div>
                 <div className="pb-4">
                   <div className="flex flex-wrap justify-between items-start mb-1">
-                    <h3 className="text-xl font-bold text-[#f5f5f5]">Slash - Refined Local E-Commerce Platform</h3>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#f5f5f5]">Slash - Refined Local E-Commerce Platform</h3>
                     <span className="text-[#007ced] text-xs font-bold uppercase tracking-wider px-2 py-1 bg-[#007ced]/10 rounded">[Production]</span>
                   </div>
                   <p className="text-[#007ced] font-semibold mb-4 text-sm uppercase tracking-wider">E-commerce Platform for Local Brands and Influencers Marketing</p>
                   <div className="text-[#d5d5d5] space-y-4 mb-6 leading-relaxed max-w-3xl">
-                    <ul className="list-none space-y-2 text-sm">
+                    <ul className="list-none space-y-2 text-xs sm:text-sm">
                       <li className="flex gap-3">
                         <span className="text-[#007ced] mt-1.5 h-1.5 w-1.5 rounded-full bg-[#007ced] shrink-0"></span>
                         <span><strong>Database Architecture Optimization:</strong> Redesigned and refactored over 20% of the database schema to enhance query performance and accommodate new feature requirements, resulting in 50% faster data retrieval and improved system scalability.</span>
@@ -844,7 +844,7 @@ export default function Experience() {
               </div>
 
               {/* Easy-Book Salon Platform Project */}
-              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="flex flex-col sm:grid sm:grid-cols-[40px_1fr] gap-4 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>content_cut</span>
@@ -853,13 +853,13 @@ export default function Experience() {
                 </div>
                 <div className="pb-4">
                   <div className="flex flex-wrap justify-between items-start mb-1">
-                    <h3 className="text-xl font-bold text-[#f5f5f5]">Easy-Book - Salon Booking Platform</h3>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#f5f5f5]">Easy-Book - Salon Booking Platform</h3>
                     <span className="text-[#007ced] text-xs font-bold uppercase tracking-wider px-2 py-1 bg-[#007ced]/10 rounded">[Production]</span>
                   </div>
                   <p className="text-[#007ced] font-semibold mb-4 text-sm uppercase tracking-wider">Multi-Branch Salon Management System</p>
                   <div className="text-[#d5d5d5] space-y-4 mb-6 leading-relaxed max-w-3xl">
                     <p>A comprehensive salon booking platform developed specifically for a client in Saudi Arabia. The platform simplifies the process of managing salon services, appointments, and staff scheduling across multiple branches.</p>
-                    <ul className="list-none space-y-2 text-sm">
+                    <ul className="list-none space-y-2 text-xs sm:text-sm">
                       <li className="flex gap-3">
                         <span className="text-[#007ced] mt-1.5 h-1.5 w-1.5 rounded-full bg-[#007ced] shrink-0"></span>
                         <span><strong>Appointment Scheduling:</strong> Streamlined booking system for clients to reserve services across different branches.</span>
@@ -928,6 +928,8 @@ export default function Experience() {
     </div>
   )
 }
+
+
 
 
 
