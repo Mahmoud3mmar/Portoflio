@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 export default function Experience() {
   const observerRef = useRef<IntersectionObserver | null>(null)
@@ -11,6 +12,7 @@ export default function Experience() {
     'plan-b': 0
   })
   const [lightboxImage, setLightboxImage] = useState<string | null>(null)
+  const [imageLoading, setImageLoading] = useState<{[key: string]: boolean}>({})
 
   const openLightbox = (imageSrc: string) => {
     setLightboxImage(imageSrc)
@@ -22,12 +24,14 @@ export default function Experience() {
     document.body.style.overflow = 'auto'
   }
 
-  const scrollToImage = (carouselId: string, index: number, totalImages: number) => {
+  const scrollToImage = (carouselId: string, index: number) => {
     const carousel = document.getElementById(`carousel-${carouselId}`)
     if (carousel) {
-      const imageWidth = 450 // Width of each image container
+      const isMobile = window.innerWidth < 640
+      const imageWidth = isMobile ? 280 : 450 // Responsive width
+      const gap = isMobile ? 12 : 16
       carousel.scrollTo({
-        left: index * (imageWidth + 16), // 16px gap
+        left: index * (imageWidth + gap),
         behavior: 'smooth'
       })
       setActiveCarousel(prev => ({ ...prev, [carouselId]: index }))
@@ -37,13 +41,13 @@ export default function Experience() {
   const nextImage = (carouselId: string, totalImages: number) => {
     const currentIndex = activeCarousel[carouselId] || 0
     const nextIndex = (currentIndex + 1) % totalImages
-    scrollToImage(carouselId, nextIndex, totalImages)
+    scrollToImage(carouselId, nextIndex)
   }
 
   const prevImage = (carouselId: string, totalImages: number) => {
     const currentIndex = activeCarousel[carouselId] || 0
     const prevIndex = currentIndex === 0 ? totalImages - 1 : currentIndex - 1
-    scrollToImage(carouselId, prevIndex, totalImages)
+    scrollToImage(carouselId, prevIndex)
   }
 
   useEffect(() => {
@@ -92,15 +96,15 @@ export default function Experience() {
       {/* Lightbox Modal */}
       {lightboxImage && (
         <div 
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fadeIn"
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-2 sm:p-4 animate-fadeIn"
           onClick={closeLightbox}
         >
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white hover:text-[#007ced] transition-all duration-300 p-2 hover:scale-110 hover:rotate-90"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white hover:text-[#007ced] transition-all duration-300 p-2 hover:scale-110 hover:rotate-90 z-10"
             aria-label="Close lightbox"
           >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -116,27 +120,27 @@ export default function Experience() {
       )}
 
       <main>
-        <div className="flex-1 py-12 px-6 lg:px-40" id="experience-fragment">
+        <div className="flex-1 py-8 sm:py-12 px-4 sm:px-6 lg:px-40" id="experience-fragment">
           <div className="max-w-4xl mx-auto">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 mb-6" data-animation-on-scroll="">
-              <a className="text-[#aaaaaa] text-sm font-medium hover:text-[#007ced] transition-colors" href="/">Portfolio</a>
-              <span className="material-symbols-outlined text-sm text-[#444444]" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>chevron_right</span>
-              <span className="text-[#d5d5d5] text-sm font-medium">Projects</span>
+            <div className="flex items-center gap-2 mb-4 sm:mb-6" data-animation-on-scroll="">
+              <a className="text-[#aaaaaa] text-xs sm:text-sm font-medium hover:text-[#007ced] transition-colors" href="/">Portfolio</a>
+              <span className="material-symbols-outlined text-xs sm:text-sm text-[#444444]" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>chevron_right</span>
+              <span className="text-[#d5d5d5] text-xs sm:text-sm font-medium">Projects</span>
             </div>
 
             {/* Title */}
-            <div className="mb-12 border-b border-[#444444] pb-8" data-animation-on-scroll="">
-              <h1 className="text-4xl font-extrabold tracking-tight mb-4 text-[#f5f5f5]">Featured Projects</h1>
-              <p className="text-[#aaaaaa] text-lg max-w-2xl leading-relaxed">
+            <div className="mb-8 sm:mb-12 border-b border-[#444444] pb-6 sm:pb-8" data-animation-on-scroll="">
+              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3 sm:mb-4 text-[#f5f5f5]">Featured Projects</h1>
+              <p className="text-[#aaaaaa] text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed">
                 A showcase of technical projects demonstrating backend architecture, system design, and engineering excellence.
               </p>
             </div>
 
             {/* Experience Timeline */}
-            <section className="space-y-16">
+            <section className="space-y-12 sm:space-y-16">
               {/* Cairo Runners Project */}
-              <div className="grid grid-cols-[40px_1fr] gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>directions_run</span>
@@ -175,16 +179,12 @@ export default function Experience() {
                           className="flex overflow-x-auto gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/cairo-runners/cairo-runners.png')}
                             >
-                              <img 
-                                src="/assets/projects/cairo-runners/cairo-runners.png" 
-                                alt="Cairo Runners Platform Screenshot" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/cairo-runners/cairo-runners.png" alt="Cairo Runners Platform Screenshot" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -227,7 +227,7 @@ export default function Experience() {
               </div>
 
               {/* Spark Booking System Project */}
-              <div className="grid grid-cols-[40px_1fr] gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>event_available</span>
@@ -290,16 +290,12 @@ export default function Experience() {
                           className="flex overflow-x-auto gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/spark-booking/1758010933041.jpg')}
                             >
-                              <img 
-                                src="/assets/projects/spark-booking/1758010933041.jpg" 
-                                alt="Spark Booking System Screenshot 1" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/spark-booking/1758010933041.jpg" alt="Spark Booking System Screenshot 1" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -307,16 +303,12 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/spark-booking/1765373388481.jpg')}
                             >
-                              <img 
-                                src="/assets/projects/spark-booking/1765373388481.jpg" 
-                                alt="Spark Booking System Screenshot 2" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/spark-booking/1765373388481.jpg" alt="Spark Booking System Screenshot 2" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -381,7 +373,7 @@ export default function Experience() {
               </div>
 
               {/* Anubis Martial Arts Platform Project */}
-              <div className="grid grid-cols-[40px_1fr] gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>sports_martial_arts</span>
@@ -448,7 +440,7 @@ export default function Experience() {
               </div>
 
               {/* DFN Nutrition Platform Project */}
-              <div className="grid grid-cols-[40px_1fr] gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>restaurant</span>
@@ -522,7 +514,7 @@ export default function Experience() {
               </div>
 
               {/* Plan-B Medical Course Platform Project */}
-              <div className="grid grid-cols-[40px_1fr] gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>school</span>
@@ -585,16 +577,12 @@ export default function Experience() {
                           className="flex overflow-x-auto gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225519.png')}
                             >
-                              <img 
-                                src="/assets/projects/plan-b/Screenshot 2026-02-09 225519.png" 
-                                alt="Plan-B Medical Platform Screenshot 1" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/plan-b/Screenshot 2026-02-09 225519.png" alt="Plan-B Medical Platform Screenshot 1" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -602,16 +590,12 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225542.png')}
                             >
-                              <img 
-                                src="/assets/projects/plan-b/Screenshot 2026-02-09 225542.png" 
-                                alt="Plan-B Medical Platform Screenshot 2" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/plan-b/Screenshot 2026-02-09 225542.png" alt="Plan-B Medical Platform Screenshot 2" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -619,16 +603,12 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225634.png')}
                             >
-                              <img 
-                                src="/assets/projects/plan-b/Screenshot 2026-02-09 225634.png" 
-                                alt="Plan-B Medical Platform Screenshot 3" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/plan-b/Screenshot 2026-02-09 225634.png" alt="Plan-B Medical Platform Screenshot 3" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -636,16 +616,12 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/plan-b/Screenshot 2026-02-09 225803.png')}
                             >
-                              <img 
-                                src="/assets/projects/plan-b/Screenshot 2026-02-09 225803.png" 
-                                alt="Plan-B Medical Platform Screenshot 4" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/plan-b/Screenshot 2026-02-09 225803.png" alt="Plan-B Medical Platform Screenshot 4" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -705,7 +681,7 @@ export default function Experience() {
               </div>
 
               {/* Slash E-Commerce Platform Project */}
-              <div className="grid grid-cols-[40px_1fr] gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>shopping_cart</span>
@@ -763,16 +739,12 @@ export default function Experience() {
                           className="flex overflow-x-auto gap-4 pb-3 snap-x snap-mandatory hide-scrollbar scroll-smooth"
                           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed.webp')}
                             >
-                              <img 
-                                src="/assets/projects/slash-ecommerce/unnamed.webp" 
-                                alt="Slash E-Commerce Platform Screenshot 1" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/slash-ecommerce/unnamed.webp" alt="Slash E-Commerce Platform Screenshot 1" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -780,16 +752,12 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed2.webp')}
                             >
-                              <img 
-                                src="/assets/projects/slash-ecommerce/unnamed2.webp" 
-                                alt="Slash E-Commerce Platform Screenshot 2" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/slash-ecommerce/unnamed2.webp" alt="Slash E-Commerce Platform Screenshot 2" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -797,16 +765,12 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed3.webp')}
                             >
-                              <img 
-                                src="/assets/projects/slash-ecommerce/unnamed3.webp" 
-                                alt="Slash E-Commerce Platform Screenshot 3" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/slash-ecommerce/unnamed3.webp" alt="Slash E-Commerce Platform Screenshot 3" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -814,16 +778,12 @@ export default function Experience() {
                               </div>
                             </div>
                           </div>
-                          <div className="flex-none w-[450px] snap-start">
+                          <div className="flex-none w-[280px] sm:w-[350px] md:w-[450px] snap-start">
                             <div 
                               className="relative overflow-hidden rounded-lg border border-[#444444] shadow-md hover:shadow-xl transition-all duration-300 bg-[#2a2a2a] cursor-pointer group"
                               onClick={() => openLightbox('/assets/projects/slash-ecommerce/unnamed4.webp')}
                             >
-                              <img 
-                                src="/assets/projects/slash-ecommerce/unnamed4.webp" 
-                                alt="Slash E-Commerce Platform Screenshot 4" 
-                                className="w-full h-auto object-contain"
-                              />
+                              <img src="/assets/projects/slash-ecommerce/unnamed4.webp" alt="Slash E-Commerce Platform Screenshot 4" className="w-full h-auto object-contain" loading="lazy" />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                 <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -884,7 +844,7 @@ export default function Experience() {
               </div>
 
               {/* Easy-Book Salon Platform Project */}
-              <div className="grid grid-cols-[40px_1fr] gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
+              <div className="grid grid-cols-[30px_1fr] sm:grid-cols-[40px_1fr] gap-x-3 sm:gap-x-6 group hover:translate-x-2 transition-all duration-500" data-animation-on-scroll="">
                 <div className="flex flex-col items-center">
                   <div className="bg-[#007ced] text-white p-2 rounded-full group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#007ced]/50 transition-all duration-300">
                     <span className="material-symbols-outlined text-sm" style={{fontVariationSettings: 'FILL 0, wght 400, GRAD 0, opsz 24', display: 'inline-block', lineHeight: 1}}>content_cut</span>
@@ -958,9 +918,9 @@ export default function Experience() {
         </div>
       </main>
 
-      <footer className="mt-20 py-12 border-t border-[#444444] bg-[#1a1a1a] px-6 lg:px-40">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-sm text-[#aaaaaa]">
+      <footer className="mt-12 sm:mt-16 lg:mt-20 py-8 sm:py-12 border-t border-[#444444] bg-[#1a1a1a] px-4 sm:px-6 lg:px-40">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
+          <div className="text-xs sm:text-sm text-[#aaaaaa]">
             © {new Date().getFullYear()} Mahmoud Ammar. All rights reserved.
           </div>
         </div>
@@ -968,3 +928,5 @@ export default function Experience() {
     </div>
   )
 }
+
+
