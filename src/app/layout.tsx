@@ -16,6 +16,15 @@ export const metadata: Metadata = {
     maximumScale: 1,
     userScalable: false,
   },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' },
+    ],
+    apple: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
   openGraph: {
     title: 'Mahmoud Ammar | Backend Software Engineer',
     description: 'Backend Engineer crafting scalable systems using Domain-Driven Design, Clean Architecture, and modern technologies',
